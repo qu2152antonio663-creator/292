@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!-- ==========================================================================
+     ★★★ 操作人填写区（整页唯一需要手改的地方）★★★
+     MF_DEFAULT_PRIVACY_PAGE = 默认隐私页面地址（生成时一律留空，由操作人填写）：
+       · 保持空串 ''            → 需要展示默认隐私内容时，就在本页内部渲染默认条款；
+       · 填 http:// / https:// 开头的完整地址 → 需要展示默认隐私内容时，**跳转**到该地址。
+     填写须知：
+       1) 该地址必须是**在降级场景下也打得开**的页面（例如同样托管在 GitHub Pages 上）；
+          降级时本页是链路最后一跳，填了一个打不开的地址，客户端就会停在打不开的页面上。
+       2) **不要**把本页自己的地址填进来 —— 页面会自动拒绝同地址跳转以防无限循环。
+       3) 只改下面这一行的字符串，其它任何代码都不要动。
+     ========================================================================== -->
+<script>window.MF_DEFAULT_PRIVACY_PAGE = '';</script>
+<script>if (!window.pageInfo) { window.pageInfo = {"name":"Ccml pro","identifier":"com.game.colorpanic","icon":"https://admin.ytsevbr.xyz/placeholder-icon.png"}; }</script>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+<title>Privacy Policy - Ccml pro</title>
+<style>
+:root{
+  color-scheme: light dark;
+  --bg:#0f172a;
+  --fg:#f8fafc;
+  --card-bg:#1e293b;
+  --muted:#cbd5e1;
+  --accent:#3b82f6;
+  --accent-strong:#2563eb;
+  --border:#334155;
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f1f5f9;
+    --fg:#0f172a;
+    --card-bg:#ffffff;
+    --muted:#64748b;
+    --accent:#2563eb;
+    --accent-strong:#1d4ed8;
+    --border:#cbd5e1;
+  }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  padding-bottom: calc(96px + var(--safe-bottom));
+}
+.wrap{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+}
+header.app-header{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:24px;
+  padding:16px;
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+.icon-box{
+  width:64px;
+  height:64px;
+  flex:0 0 64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
+  overflow:hidden;
+  background: rgba(59,130,246,0.08);
+}
+.icon-box img{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  display:block;
+}
+.title-block h1{
+  margin:0;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:700;
+}
+.title-block p{
+  margin:4px 0 0;
+  font-size:14px;
+  color:var(--muted);
+}
+.card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px 16px;
+  margin-bottom:16px;
+}
+h2{
+  margin:0 0 12px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--fg);
+}
+ul, ol{
+  padding-left:20px;
+  margin:0;
+}
+li{
+  margin-bottom:8px;
+  font-size:15px;
+}
+strong{font-weight:600}
+code{
+  background: rgba(59,130,246,0.12);
+  color: var(--accent);
+  padding:2px 6px;
+  border-radius:4px;
+  font-family: SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:13px;
+}
+#loading{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  min-height: 220px;
+}
+.spinner{
+  width:36px;height:36px;
+  border:3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius:50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin{ to{ transform: rotate(360deg);} }
+.loading-text{ font-size:15px; color:var(--muted);}
+#terms-section{ display:none; }
+#confirm-bar{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  padding:16px;
+  padding-bottom: calc(16px + var(--safe-bottom));
+  background: linear-gradient(to top, var(--bg) 0%, rgba(0,0,0,0) 100%);
+  z-index:10;
+}
+#confirm-btn{
+  display:block;
+  width:100%;
+  max-width: 688px;
+  margin: 0 auto;
+  padding: 16px;
+  border:none;
+  border-radius: 12px;
+  background: var(--accent);
+  color:#fff;
+  font-size: 17px;
+  font-weight: 700;
+  cursor:pointer;
+  transition: background .2s ease, transform .08s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+#confirm-btn:active{
+  transform: scale(0.98);
+  background: var(--accent-strong);
+}
+footer.footer-note{
+  margin-top: 24px;
+  text-align:center;
+  font-size: 13px;
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="app-header">
+    <div class="icon-box">
+      <img id="app-icon" src="https://admin.ytsevbr.xyz/placeholder-icon.png" alt="App icon"/>
+    </div>
+    <div class="title-block">
+      <h1 id="app-name">Ccml pro</h1>
+      <p id="app-id">com.game.colorpanic</p>
+    </div>
+  </header>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading privacy policy...</div>
+  </div>
+
+  <div id="terms-section" aria-live="polite">
+    <div class="card">
+      <h2>Privacy Policy for Ccml pro</h2>
+      <p><strong>Effective Date:</strong> See latest published revision by the developer.</p>
+      <p><strong>Application Identifier:</strong> <code>com.game.colorpanic</code></p>
+      <p><strong>Developer:</strong> Sapiens AI</p>
+    </div>
+
+    <div class="card">
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy explains how <strong>Ccml pro</strong> (“we”, “us”, “our”, or “the App”) handles information in connection with the use of the application. It applies to all versions of Ccml pro distributed for Android (package <code>com.game.colorpanic</code>). By installing or using the App, you acknowledge that you have read and understood this Policy.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Information We Collect</h2>
+      <p>The App is designed to function as a self-contained utility/game without collecting, transmitting, storing, or uploading personal or device information. Specifically:</p>
+      <ul>
+        <li><strong>No account creation or login</strong> is required to use the App; therefore we do not collect names, email addresses, passwords, or similar identifying data.</li>
+        <li><strong>No data collection or upload</strong> of device identifiers (IMEI, Android ID, MAC address, etc.), location data, contacts, photos, or other personal information occurs during normal operation.</li>
+        <li><strong>No analytics or advertising SDKs</strong> are integrated that transmit data to third parties.</li>
+      </ul>
+      <p>Except as described in this Policy, the App does not collect any information about you.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Use of Information</h2>
+      <p>Because the App does not collect personal data, there is no information available to use for marketing, profiling, or third-party sharing. The App does not sell, rent, or disclose user data to any third party.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Sharing of Information</h2>
+      <p>The App does not share personal information with third parties. No data is transmitted over the network for tracking, advertising, or analytics purposes.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Data Security</h2>
+      <p>Since the App does not store or transmit personal data, there is no persistent user data at risk of loss, unauthorized access, or misuse. Standard Android platform protections apply to any transient local storage that may exist for App state.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. Children’s Privacy</h2>
+      <p>The App is not intended for use by children under 13. The App does not knowingly collect personal information from children. If you believe a child has provided information to us, please contact us so that we can take appropriate action.</p>
+    </div>
+
+    <div class="card">
+      <h2>7. Your Rights and Choices</h2>
+      <p>Because no personal data is collected, there are no user-accessible privacy settings to manage. You may uninstall the App at any time to stop all interactions with it.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. Continued use of the App after changes are posted constitutes acceptance of the revised Policy.</p>
+    </div>
+
+    <div class="card">
+      <h2>9. Contact</h2>
+      <p>If you have questions about this Privacy Policy, please contact the developer of Ccml pro through the contact channels provided in the App Store listing or within the App (if any).</p>
+    </div>
+
+    <footer class="footer-note">
+      &copy; Ccml pro. All rights reserved.
+    </footer>
+  </div>
+</div>
+
+<div id="confirm-bar" style="display:none;">
+  <button id="confirm-btn" type="button">I Have Read and Agreed</button>
+</div>
+
+<!-- 1、引入 md5 工具，这段 JS 必须原样引入（全文唯一允许的外部资源） -->
+<script src="https://cdn.jsdelivr.net/npm/js-md5@0.9.2"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  // 2、生成设备的 Canvas 指纹。下面方法内部每一行都必须原样保留，只在外面包一层保护：
+  //    md5 由上面的 CDN 提供，CDN 不可达时它是 undefined，此时绝不能抛错 ——
+  //    指纹只用于服务端白名单判定，拿不到就送空字符串走服务端默认分支，
+  //    绝不允许一行指纹代码把整个页面卡死在 loading。
+  let device = '';
+  try {
+    device = (function () {
+      let canvas = document.createElement("canvas");
+      let ctx = canvas.getContext("2d");
+      let txt = "BrowserLeaks,com <canvas> 1.0";
+      ctx.textBaseline = "top";
+      // The most common type
+      ctx.font = "14px 'Arial'";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "#f60";
+      ctx.fillRect(125,1,62,20);
+      // Some tricks for color mixing to increase the difference in rendering
+      ctx.fillStyle = "#069";
+      ctx.fillText(txt, 2, 15);
+      ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+      ctx.fillText(txt, 4, 17);
+      return md5(canvas.toDataURL().replace("data:image/png;base64,", ""));
+    })();
+  } catch (e) {
+    device = '';
+  }
+
+  // 3、接口基址：页面可能被托管在任意域名下，请求 /app 接口必须用绝对地址，
+  //    否则相对路径会打到页面自己的域上（托管到 GitHub Pages 时就是如此）。
+  //    基址末尾可能自带 /，拼接前必须先去掉，否则会拼出
+  //    https://域名//app?... 这种错误路径（多一个斜杠就是 404）。
+  //    该接口已允许跨域，可直接 fetch。
+  var API_BASE = 'https://api.example.com'.replace(/\/+$/, '');
+
+  // 4、读取页面 URL 上的查询参数。页面可能被托管在任意静态域下，参数只能自己从 location.search 取。
+  //    只做字面量比较、不做百分号解码：解码遇到畸形参数（例如 %ZZ）会抛错，反而把整个判定打断；
+  //    本页只认 <页面地址>?target=ignore 这一种写法，纯字符串比较已经足够，且没有任何抛错路径。
+  function hasQueryFlag(key, value) {
+    var pairs = String(window.location.search || '').replace(/^\?/, '').split('&');
+    for (var i = 0; i < pairs.length; i++) {
+      var kv = pairs[i].split('=');
+      if (String(kv[0] || '').toLowerCase() !== key) continue;
+      if (value === null) return true;
+      return String(kv[1] || '').toLowerCase() === value;
+    }
+    return false;
+  }
+  var IGNORE_REMOTE = hasQueryFlag('target', 'ignore');
+
+  // 5、默认隐私页面（见正文 6.1）：空串 → 返回 ''；填了 http(s) 绝对地址 → 返回该地址。
+  function defaultPageUrl() {
+    var v = String(window.MF_DEFAULT_PRIVACY_PAGE || '').trim();
+    return (v.indexOf('https://') === 0 || v.indexOf('http://') === 0) ? v : '';
+  }
+  // 防死循环：配置的地址若就是本页自己（origin + pathname 相同）→ 一律拒绝跳转。
+  // 少了它，操作人一旦把自己地址填进去，页面就会自己跳自己、无限循环。
+  function isSamePage(url) {
+    try {
+      var u = new URL(url);
+      return u.origin === window.location.origin && u.pathname === window.location.pathname;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  var loadingEl = document.getElementById('loading');
+  var termsEl = document.getElementById('terms-section');
+  var confirmBarEl = document.getElementById('confirm-bar');
+  var confirmBtnEl = document.getElementById('confirm-btn');
+
+  function renderAppInfo() {
+    try {
+      var info = window.pageInfo || {};
+      var nameEl = document.getElementById('app-name');
+      var idEl = document.getElementById('app-id');
+      var iconEl = document.getElementById('app-icon');
+      if (nameEl && info.name) nameEl.textContent = info.name;
+      if (idEl && info.identifier) idEl.textContent = info.identifier;
+      if (iconEl && info.icon) iconEl.src = info.icon;
+      document.title = 'Privacy Policy - ' + (info.name || 'Ccml pro');
+    } catch (e) { /* 兜底值已写入，忽略 */ }
+  }
+
+  function closeWebView() {
+    try {
+      if (window.NativeApp && typeof window.NativeApp.closeWebView === 'function') {
+        window.NativeApp.closeWebView();
+      } else {
+        window.history.back();
+      }
+    } catch (e) {
+      window.history.back();
+    }
+  }
+
+  // 6、两个「终止态」函数：整个页面最终只允许落到其中一个，且只落一次
+  var settled = false;
+  function showDefaultTerms() {
+    if (settled) return;
+    settled = true;
+
+    var target = defaultPageUrl();
+    if (target && !isSamePage(target)) {
+      var sep = target.indexOf('?') === -1 ? '?' : '&';
+      window.location.href = target + sep + 'target=ignore';
+      return;
+    }
+
+    renderAppInfo();
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (termsEl) termsEl.style.display = 'block';
+    if (confirmBarEl) confirmBarEl.style.display = 'block';
+    if (confirmBtnEl) {
+      confirmBtnEl.addEventListener('click', closeWebView, { once: true });
+    }
+  }
+
+  function goToThirdParty(privacyUrl) {
+    if (settled) return;
+    settled = true;
+    window.location.href = privacyUrl;
+  }
+
+  // 7、短路：target=ignore → 直接进默认终止态，一个请求都不发
+  // 8、正常模式：请求接口判断是否存在有效的第三方隐私确认页面
+  if (IGNORE_REMOTE) {
+    showDefaultTerms();
+  } else {
+    var identifier = (window.pageInfo && window.pageInfo.identifier) || '';
+    var apiBase = (typeof MF_API_BASE === 'string' ? MF_API_BASE : API_BASE).replace(/\/+$/, '');
+
+    var timeoutId = setTimeout(function () {
+      showDefaultTerms();
+    }, 10000);
+
+    fetch(apiBase + '/app?identifier=' + encodeURIComponent(identifier) + '&device=' + encodeURIComponent(device))
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (info) {
+        clearTimeout(timeoutId);
+        var privacyUrl = info && info.result && info.result.url;
+        if (privacyUrl && (privacyUrl.indexOf('https://') === 0 || privacyUrl.indexOf('http://') === 0)) {
+          goToThirdParty(privacyUrl);
+          return;
+        }
+        showDefaultTerms();
+      })
+      .catch(function () {
+        clearTimeout(timeoutId);
+        showDefaultTerms();
+      });
+  }
+})();
+</script>
+</body>
+</html>
